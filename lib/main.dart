@@ -10,10 +10,13 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return MaterialApp(
         debugShowCheckedModeBanner: false,
         title: 'X',
-        home: Twitter());
+        theme: ThemeData(
+          scaffoldBackgroundColor: Colors.black,
+        ),
+        home: const Twitter());
   }
 }
 
@@ -61,13 +64,26 @@ class Twitter extends StatelessWidget {
                     ],
                   ),
                 ),
-                const Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 55.0, vertical: 10.0),
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 55.0, vertical: 10.0),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      Text('For you', style: TextStyle(color: Colors.white, fontSize: 16.0, fontWeight: FontWeight.bold,),),
-                      Text('Following', style: TextStyle(color: Colors.white, fontSize: 16.0, fontWeight: FontWeight.bold,),),
+                      Column(
+                        children: [
+                          const Text('For you', style: TextStyle(color: Colors.white, fontSize: 16.0, fontWeight: FontWeight.bold,),),
+                          const SizedBox(height: 1.0,),
+                          Container(
+                            width: 60.0,
+                            height: 3.0,
+                            decoration: BoxDecoration(
+                              color: const Color(0xFF1D9BF0), 
+                              borderRadius: BorderRadius.circular(12.0), 
+                            ),
+                          )
+                        ],
+                      ),
+                      const Text('Following', style: TextStyle(color: Colors.white, fontSize: 16.0, fontWeight: FontWeight.bold,),),
                     ],
                   ),
                 )
@@ -79,8 +95,29 @@ class Twitter extends StatelessWidget {
         body: Container(
           color: Colors.black,
           child: const TabBarView(children: [HomeScreen()]),
-        )
+        ),
         
+        bottomNavigationBar: const BottomAppBar(
+          color: Colors.black,
+          child: Padding(
+            padding: EdgeInsets.symmetric(horizontal: 20.0, vertical: 10.0),
+            child: Row(
+              children: [
+                Icon(FontAwesomeIcons.house ,color: Colors.white, size: 20.0,),
+                SizedBox(width: 40.0,),
+                Icon(FontAwesomeIcons.magnifyingGlass ,color: Colors.white, size: 20.0,),
+                SizedBox(width: 40.0,),
+                Icon(FontAwesomeIcons.penToSquare ,color: Colors.white, size: 20.0,),
+                SizedBox(width: 40.0,),
+                Icon(FontAwesomeIcons.userGroup ,color: Colors.white, size: 20.0,),
+                SizedBox(width: 40.0,),
+                Icon(FontAwesomeIcons.bell ,color: Colors.white, size: 20.0,),
+                SizedBox(width: 40.0,),
+                Icon(FontAwesomeIcons.envelope ,color: Colors.white, size: 20.0,),
+              ],
+            ),
+          ),
+        ),
       ),
     );
   }

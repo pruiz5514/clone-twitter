@@ -7,37 +7,53 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Column(
-        children: <Widget>[
-          tweets(
-            context,
-            profileImage: 'https://pbs.twimg.com/profile_images/1810693638973779968/3PB9X9HL_400x400.jpg',
-            name:'Atlético Nacional',
-            userName: '@nacionaloficial',
-            verified: true,
-            date: '27/07/16',
-            content: 'Somos el único equipo del país con dos títulos de Copa Libertadores. ¡Conquistamos América en 1989 y 2016!',
-            tweetImage: 'https://pbs.twimg.com/media/Coa0yKMWcAAvKHK?format=jpg&name=small',
-            comments: '92',
-            retweets: '2.8K',
-            likes: '3K',
-            views: '111K',
-          ),
-          tweets(
-            context,
-            profileImage: 'https://pbs.twimg.com/profile_images/1810693638973779968/3PB9X9HL_400x400.jpg',
-            name:'Atlético Nacional',
-            userName: '@nacionaloficial',
-            verified: true,
-            date: '27/07/16',
-            content: 'NAL vs IDV |1-0| Termina el encuentro por la final de la libertadores. ¡SOMOS CAMPEONES DE AMERICA!' ,
-            comments: '292',
-            retweets: '9.8K',
-            likes: '23K',
-            views: '111K',
-          ),
+      body: SingleChildScrollView(
+        child: Column(
+           children: <Widget>[
+            tweets(
+              context,
+              profileImage: 'https://pbs.twimg.com/profile_images/1810693638973779968/3PB9X9HL_400x400.jpg',
+              name:'Atlético Nacional',
+              userName: '@nacionaloficial',
+              verified: true,
+              date: '27/07/16',
+              content: 'Somos el único equipo del país con dos títulos de Copa Libertadores. ¡Conquistamos América en 1989 y 2016!',
+              tweetImage: 'https://pbs.twimg.com/media/Coa0yKMWcAAvKHK?format=jpg&name=small',
+              comments: '92',
+              retweets: '2.8K',
+              likes: '3K',
+              views: '111K',
+            ),
+            tweets(
+              context,
+              profileImage: 'https://pbs.twimg.com/profile_images/1810693638973779968/3PB9X9HL_400x400.jpg',
+              name:'Atlético Nacional',
+              userName: '@nacionaloficial',
+              verified: true,
+              date: '27/07/16',
+              content: 'NAL vs IDV |1-0| Termina el encuentro por la final de la libertadores. ¡SOMOS CAMPEONES DE AMERICA!' ,
+              comments: '292',
+              retweets: '9.8K',
+              likes: '23K',
+              views: '111K',
+            ),
+            tweets(
+              context,
+              name:'Pablo Ruiz',
+              userName: '@pabloruiz',
+              verified: false,
+              date: '26/07/16',
+              content: 'Aprendiendo Flutter' ,
+              comments: '0',
+              retweets: '0',
+              likes: '2',
+              views: '3',
+            ),
           
-        ],
+          ],
+        )
+        ,
+       
       ),
     );
   }

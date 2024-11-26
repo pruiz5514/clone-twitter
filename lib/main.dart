@@ -76,7 +76,11 @@ class Twitter extends StatelessWidget {
           ),
           
         ),
-        body: const TabBarView(children: [HomeScreen()])
+        body: Container(
+          color: Colors.black,
+          child: const TabBarView(children: [HomeScreen()]),
+        )
+        
       ),
     );
   }
